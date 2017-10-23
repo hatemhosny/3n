@@ -4,6 +4,7 @@ import { Http, HttpModule } from '@angular/http';
 // vendor dependencies
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NbThemeModule } from '@nebular/theme';
 // app
 import { Config } from './common/index';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ export function createTranslateLoader(http: Http) {
                 deps: [Http]
             }
         }),
+        NbThemeModule.forRoot({ name: 'default' }),
         ...SHARED_MODULES
     ],
     providers: [],
